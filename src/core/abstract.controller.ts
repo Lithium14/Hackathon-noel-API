@@ -2,12 +2,12 @@ import express, {Application, Request, Response, Router } from 'express';
 import { AbstractService } from './abstract.service';
 
 export abstract class AbstractController {
-    protected abstract route: string;
     protected abstract service: AbstractService;
 
-    constructor(app: Application) {
+    constructor(route: string, app: Application) {
         const abstractRouter: Router = express.Router();
-        this.init(app, abstractRouter);
+        const router = this.init(app, abstractRouter);
+        app.use('/' + route, abstractRouter);
     }
 
     init(app: Application, abstractRouter: Router) {
@@ -32,6 +32,6 @@ export abstract class AbstractController {
             res.send(await this.service.delete(Number(req.params.id)));
         });
 
-        app.use('/' + this.route, abstractRouter);
+        return abstractRouter;
     }
 }

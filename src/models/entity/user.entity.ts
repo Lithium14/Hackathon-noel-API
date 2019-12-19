@@ -1,6 +1,6 @@
 import { Score } from './score.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-
+import { Message } from './message.entity';
 @Entity('user')
 export class User {
     @PrimaryGeneratedColumn()

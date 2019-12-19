@@ -1,5 +1,4 @@
-import { World } from './world.entity';
-import { Score } from './message.entity';
+import { Score } from './score.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity('world')
@@ -8,11 +7,11 @@ export class World {
     id!: number;
 
     @Column()
-    world!: number;
+    world!: string;
 
     @OneToMany(
         type => Score,
-        score => score.worlds,
+        score => score.world,
     )
         scores!: Score[];
 }

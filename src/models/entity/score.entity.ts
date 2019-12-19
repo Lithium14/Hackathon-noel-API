@@ -12,7 +12,7 @@ export class Score {
 
     @ManyToOne(
         type => User,
-        user => user.scores)
+        user => user.score)
         user!: User[];
 
     @ManyToOne(

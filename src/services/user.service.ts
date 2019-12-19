@@ -4,4 +4,9 @@ import { AbstractService } from '../core/abstract.service';
 
 export class UserService extends AbstractService {
     protected repository = getCustomRepository(UserRepository);
+
+    constructor() {
+        super();
+    }
+
 }

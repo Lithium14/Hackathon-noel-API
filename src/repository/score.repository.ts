@@ -1,4 +1,4 @@
-import { Score } from './../models/entity/message.entity';
+import { Score } from './../models/entity/score.entity';
 import { EntityRepository, Repository } from 'typeorm';
 
 @EntityRepository(Score)

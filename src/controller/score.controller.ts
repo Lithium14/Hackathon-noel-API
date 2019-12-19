@@ -5,9 +5,8 @@ import { AbstractController } from '../core/abstract.controller';
 export class ScoreController extends AbstractController {
 
   service = new ScoreService();
-  route = 'score';
 
   constructor(app: Application) {
-      super(app);
+      super('scores', app);
   }
 }

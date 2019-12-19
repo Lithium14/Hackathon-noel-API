@@ -1,5 +1,8 @@
+import { Score } from './../models/entity/score.entity';
+import { World } from './../models/entity/world.entity';
+import { Message } from './../models/entity/message.entity';
+import { User } from './../models/entity/user.entity';
 import { createConnection, Connection } from 'typeorm';
-// Importer les entity créer
 
 export default async () => {
     const connection: Connection = await createConnection({
@@ -10,6 +13,10 @@ export default async () => {
         password: process.env.WILD_DB_NOEL_PASSWORD,
         database: process.env.WILD_DB_NOEL_DATABASE,
         entities: [
+            User,
+            Message,
+            World,
+            Score,
 
         ],
         synchronize: true,

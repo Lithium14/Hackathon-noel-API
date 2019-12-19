@@ -1,13 +1,13 @@
 import { User } from './user.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 
-@Entity('score')
-export class Score {
+@Entity('message')
+export class Message {
     @PrimaryGeneratedColumn()
     id!: number;
 
     @Column()
-    text!: string;
+    content!: string;
 
     @Column()
     date!: Date;

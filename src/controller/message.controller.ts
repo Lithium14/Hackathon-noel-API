@@ -5,9 +5,8 @@ import { AbstractController } from '../core/abstract.controller';
 export class MessageController extends AbstractController {
 
   service = new MessageService();
-  route = 'user';
 
   constructor(app: Application) {
-      super(app);
+      super('messages', app);
   }
 }

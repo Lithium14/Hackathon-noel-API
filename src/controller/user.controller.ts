@@ -5,9 +5,8 @@ import { AbstractController } from '../core/abstract.controller';
 export class UserController extends AbstractController {
 
   service = new UserService();
-  route = 'user';
 
   constructor(app: Application) {
-      super(app);
+      super('users', app);
   }
 }
